@@ -63,7 +63,7 @@ setInterval(updateTime, 1000);
 updateTime();
 
 
-const apiKey = '9b5de20d3b7b200da28e50ec80cb5b64';
+const apiKey = "xxxx";
 const apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
 function getWeather(city) {
