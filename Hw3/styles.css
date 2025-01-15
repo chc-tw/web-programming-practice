@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ddd;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.board {
+    margin-bottom: 20px;
+}
+
+#board {
+    border-collapse: collapse;
+}
+
+#board td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 24px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    background-color: white;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#restart {
+    font-size: 1.2em;
+    margin-left: 20px;
+}
+
+.hidden {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    display: none;
+}
+
+
+.key {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+
+.key:hover {
+    background-color: #45a049;
+}
+
+.green {
+    background-color: #4CAF50 !important;
+    color: black;
+}
+
+.yellow {
+    background-color: #ffeb3b !important;
+    color: black;
+}
+
+.gray {
+    background-color: gray !important;
+    color: black;
+}
+
+@keyframes flip {
+    0% { transform: rotateY(0); }
+    25% { transform: rotateY(90deg); }
+    50% { transform: rotateY(180deg); }
+    75% { transform: rotateY(270deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+.flip {
+    animation-name: flip;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    transform-style: preserve-3d;
+}
+

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>學習輔助工具</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        
+        <h1>
+            <img src="study.png" id="logo">
+            學習輔助工具
+        </h1>
+    </header>
+    <nav>
+        <ul>
+            <li id="weather-nav" class="active">每日天氣</li>
+            <li id="todolist-nav">每日待做清單</li>
+            <li id="dailyplanner-nav">每日時間規劃</li>
+            <li id="pomodoro-nav">番茄鐘</li>
+        </ul>
+    </nav>
+    <div id="daily-weather" class="feature active">
+        <h2>每日天氣</h2>
+        <div id="time"></div>
+        <div id="weather">
+            <div id="weather-icon"></div>
+            <div id="weather-description"></div>
+            <div id="weather-temperature"></div>
+            <div id="weather-humidity"></div>
+            <div id="weather-windspeed"></div>
+            <div id="city-selection">
+                <select id="city-select">
+                    <option value="Taipei">台北</option>
+                    <option value="Hsinchu">新竹</option>
+                    <option value="Taichung">台中</option>
+                    <option value="Tainan">台南</option>
+                    <option value="Kaohsiung">高雄</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="daily-tasks" class="feature">
+        <h2>每日待做清單</h2>
+        <div id="list-head">
+            <li>
+                <div class="task-name">名字</div>
+                <div class="task-category">類別</div>
+                <div class="task-priority">優先度</div>
+                <div class="task-completed">完成</div>
+                <div class="task-delete">刪除</div>
+            </li>
+        </div>
+        <div id="task-list">
+            
+        </div>
+        <div id="task-status" ></div>
+        <form id="task-form">
+            <input id="task-name" type="text" placeholder="名稱..." required>
+            <input id="task-category" type="text" placeholder="類別..." required>
+            <select id="task-priority">
+                <option value="高">高</option>
+                <option value="中">中</option>
+                <option value="低" selected>低</option>
+            </select>
+            <button type="submit">添加</button>
+        </form>
+    </div>
+    
+    <div id="daily-schedule" class="feature">
+        <h2>每日時間規劃</h2>
+        <div id="schedule-container">
+            <div id="task-section">
+                <h3>任務清單</h3>
+                <ul id="schedule-tasks"></ul>
+                <div id="add-schedule">
+                    <label for="schedule-start">開始時間:</label>
+                    <select id="schedule-start"></select>
+                    <label for="schedule-end">結束時間:</label>
+                    <select id="schedule-end"></select>
+                    <label for="schedule-name">任務名稱:</label>
+                    <input list="task-names" id="schedule-name">
+                    <datalist id="task-names"></datalist>
+                    <label for="schedule-color">選擇顏色:</label>
+                    <select id="schedule-color">
+                        <option value="#FFD1D1">紅色</option>
+                        <option value="#AEBDCA">藍色</option>
+                        <option value="#7D9D9C">綠色</option>
+                        <option value="#FFD8A9">黃色</option>
+                    </select>
+                    <button id="schedule-add">新增規劃</button>
+                    <button id="clear-schedule">清空時間表</button>
+
+                </div>
+            </div>
+            <div id="time-table-section">
+                <h3>時間規劃表</h3>
+                <table id="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>時間</th>
+                            <th>任務</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="pomodoro" class="feature">
+        <h2>番茄鐘</h2>
+        <div id="pomodoro-container">
+            <div id="timer-display">
+                25:00
+            </div>
+            <div id="timer-controls">
+                <button id="add-time">增加五分鐘</button>
+                <button id="subtract-time">減少五分鐘</button>
+                <button id="start-timer">開始做事</button>
+                <button id="reset-timer">重新計時</button>
+                <button id="stop-timer">停止計時</button>
+            </div>
+            <div id="timer-stats">
+                今天總共認真了 <span id="total-focus-time">0</span> 分鐘
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!--function button-->
+    <button id="theme-switcher">
+        <img id="theme-icon" src="sun.png">
+    </button>
+    
+
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="edit-title">編輯規劃</div>
+    
+            <label for="edit-start">開始時間:</label>
+            <select id="edit-start"></select>
+    
+            <label for="edit-end">結束時間:</label>
+            <select id="edit-end"></select>
+    
+            <label for="edit-name">任務名稱:</label>
+            <input id="edit-name" type="text" list="task-names">
+    
+            <label for="edit-color">顏色:</label>
+            <select id="edit-color">
+                <option value="#FFD1D1">紅色</option>
+                <option value="#AEBDCA">藍色</option>
+                <option value="#7D9D9C">綠色</option>
+                <option value="#FFD8A9">黃色</option>
+                <!-- Add more colors as needed -->
+            </select>
+    
+            <button id="edit-submit">確認修改</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
